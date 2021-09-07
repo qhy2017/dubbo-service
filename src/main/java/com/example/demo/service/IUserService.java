@@ -2,5 +2,5 @@ package com.example.demo.service;
 
 public interface IUserService {
 
-	String getUserName();
+	String getUserName(String name);
 }

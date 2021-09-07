@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 public class DemoServerApplication {
 
 	public static void main(String[] args) {
-		System.err.println("服务端启动--------------------------------------ok");
+		System.out.println("服务端启动--------------------------------------ok");
 		SpringApplication.run(DemoServerApplication.class, args);
 	}
 }
