@@ -3,6 +3,7 @@ package com.example.demo.dubbo;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
+import com.example.demo.service.ITestImpl;
 import com.example.demo.service.IUserService;
 
 public class Test {
@@ -18,8 +19,10 @@ public class Test {
                 .setRegistryConfig(registryConfig).setCheck(false).setTimeout(5000).setVersion("1.0.0");
         IUserService impl = rpcTool.getImpl(IUserService.class);
         System.out.println(impl.getUserName("quHongyuan"));
-         impl = rpcTool.getImpl(IUserService.class);
-        System.out.println(impl.getUserName("quHongyuan"));
+        ITestImpl iTest = RPCTool.build()
+                .setApplicationConfig(applicationConfig)
+                .setRegistryConfig(registryConfig).setCheck(false).setTimeout(5000).setVersion("1.0.0").getImpl(ITestImpl.class);
+        System.out.println(iTest.getHello("你好呀！"));
     }
 
 }
